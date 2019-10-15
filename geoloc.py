@@ -178,37 +178,6 @@ def proc_texts(output_text, input_text):
             
             out.write(fmt)
 
-
-def proc_users(ny_path, cl_path, gg_path,input_text):
-    with open(ny_path, 'w', encoding="latin-1") as out_ny, open(cl_path, 'w', encoding="latin-1") as out_cl,  open(gg_path, 'w', encoding="latin-1") as out_gg, open(input_text, encoding="latin-1") as tweets:
-        tweets = tweets.readlines()    
-        nyusers=[]
-        clusers=[]
-        ggusers=[]
-        for line in tweets:
-            line = line.strip()  
-            first_user_st_idx = line.index('USER_')
-            label_idx = -(line[::-1].index(','))  
-            label = line[label_idx:]
-            text = line[first_user_st_idx:label_idx-1]            
-
-            while "USER_" in text:   
-                st_idx = text.index('USER_')
-                end_idx = st_idx+13
-                user = text[st_idx:end_idx]
-                text = text[end_idx:]
-                if label == 'NewYork':                
-                    nyusers.append(user)
-                elif label == 'California':
-                    clusers.append(user)
-                else:
-                    ggusers.append(user)
-
-        out_ny.write("{}\n".format(','.join(map(str, set(nyusers)))) ) 
-        out_cl.write("{}\n".format(','.join(map(str, set(clusers)))) ) 
-        out_gg.write("{}\n".format(','.join(map(str, set(ggusers)))) )     
-        
-
 def get_TFIDF(X_train, X_test, MAX_NB_WORDS=1000):    
     param = { "sublinear_tf":True, "analyzer":'word', "min_df":5, "max_df": 0.5,
              "max_features":MAX_NB_WORDS, "stop_words":'english', 'norm':'l2' }    
@@ -218,9 +187,7 @@ def get_TFIDF(X_train, X_test, MAX_NB_WORDS=1000):
     #print("tf-idf with",str(np.array(X_train).shape[1]),"features")
     return (X_train,X_test)
 
-def preprocess():    
-    #proc_users('userny.csv', 'usercl.csv', 'usergg.csv', 'tweets/users_tweets.txt')    
-    
+def preprocess():     
     ##### development mode => feature engineering
     proc_texts('tfidf.csv', 'tweets/train_tweets.txt')
     proc_texts('tfidf_test.csv', 'tweets/dev_tweets.txt')
@@ -309,6 +276,7 @@ def model():
         train_X = hstack((train_X,  df[col].values.reshape(df.shape[0], 1))  )
         test_X = hstack((test_X,  df_test[col].values.reshape(df_test.shape[0], 1))  )    
 
+    ### SAMPLING : SMOTE
     train_X, train_y = SMOTE(random_state=42).fit_resample(train_X, train_y)  ## sampling technique: SMOTE, SMOTEEN, etc.
     
     return models, train_X, test_X, train_y, test_y
