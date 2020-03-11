@@ -16,8 +16,8 @@ After tokenization, stopwords, special characters, and punctuation were removed 
 
 ## [3] Feature engineering
 1. TF-IDF score is calculated for all records.
-2. Sort TF-IDF score by each class. i.e Select top 20 features from Georgiax as the position of the blend word characters, 
-3. combine the vocabulary that obtained top scores from each class and remove the duplication.
+2. Sort TF-IDF score by each class. i.e Select top 20 features from Georgia. 
+3. Combine the vocabulary that obtained top scores from each class and remove the duplication.
 4. Feed the combined vocabulary again to the TF-IDF vectorizer
 
 
