@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Oct  9 18:41:47 2019
-@author: annonymous
+@author: hongsang yoo
 """
 from sklearn.svm import LinearSVC
 from sklearn.naive_bayes import MultinomialNB
