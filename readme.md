@@ -1,5 +1,5 @@
 ## [1] Overview
-This project was an assignment in Knowledge Technology taken in 2019 in the University of Melbourne.
+This project was done in the subject, COMP90049 (Knowledge Technology - now Introduction to Machine Learning) taken in 2019 in the University of Melbourne.
 
 Received 19/20
 
