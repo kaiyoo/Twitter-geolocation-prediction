@@ -1,8 +1,6 @@
 ## [1] Overview
 This project was done in the subject, COMP90049 (Knowledge Technology - now Introduction to Machine Learning) taken in 2019 in the University of Melbourne.
 
-Received 19/20
-
 This project is to detect geolocation of twitter users based on TF-IDF.
 Multinomial Naive Bayes and Random forest were considered in this experiment.
 
