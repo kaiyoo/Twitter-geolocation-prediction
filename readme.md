@@ -24,13 +24,20 @@ After tokenization, stopwords, special characters, and punctuation were removed 
 
 ex)
 Top 5 words that have highest chi square scores for each class:
-<!-- 
-**California: mor, gw, hella, hahaha, haha**
+
+<!-- **California: mor, gw, hella, hahaha, haha**
 
 **Georgia: famusextape, willies, atlanta, thatisall, atl**
 
 **NewYork: lml, lmaooo, lmaoo, inhighschool, haha** -->
-![top-chisquare](REPORT/top-chisquare.PNG)
+California | Georgia | NewYork
+--- | --- | ---
+mor | famusextape | lml
+gw  | willies | lmaooo
+hella  | atlanta | lmaoo
+hahaha | thatisall | inhighschool
+haha | atl | haha
+(Note: words were lemmatized during preprocessing) 
 
 
 ## [4] Meta features
