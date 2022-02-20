@@ -22,16 +22,15 @@ After tokenization, stopwords, special characters, and punctuation were removed 
 3. Combine the vocabulary that obtained top scores from each class and remove the duplication.
 4. Feed the combined vocabulary again to the TF-IDF vectorizer
 
-
-
 ex)
 Top 5 words that have highest chi square scores for each class:
-
+<!-- 
 **California: mor, gw, hella, hahaha, haha**
 
 **Georgia: famusextape, willies, atlanta, thatisall, atl**
 
-**NewYork: lml, lmaooo, lmaoo, inhighschool, haha**
+**NewYork: lml, lmaooo, lmaoo, inhighschool, haha** -->
+![top-chisquare](REPORT/top-chisquare.PNG)
 
 
 ## [4] Meta features
