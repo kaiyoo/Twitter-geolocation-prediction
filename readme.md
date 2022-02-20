@@ -33,10 +33,11 @@ Top 5 words that have highest chi square scores for each class:
 California | Georgia | NewYork
 --- | --- | ---
 mor | famusextape | lml
-gw  | willies | lmaooo
-hella  | atlanta | lmaoo
+gw | willies | lmaooo
+hella | atlanta | lmaoo
 hahaha | thatisall | inhighschool
 haha | atl | haha
+
 (Note: words were lemmatized during preprocessing) 
 
 
